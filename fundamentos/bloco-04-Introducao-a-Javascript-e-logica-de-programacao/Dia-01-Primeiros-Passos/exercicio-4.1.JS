@@ -188,7 +188,7 @@ Fazendo a conta, temos: (7,5% de R$ 2.670,00) - R$ 142,80 = R$ 57,45
 O último cálculo para conseguir o salário líquido é R$ 2.670,00 - R$ 57,45 (salário-base - valor IR) = R$ 2.612,55.
 Resultado: R$ 2.612,55.
 Dica: que tal identificar as alíquotas com variáveis de nomes explicativos?
-*/
+
 let salarioBruto = 3000;
 let aliquotaInss;
 let Ir;
@@ -221,3 +221,4 @@ if(salarioBase>=4664.68){
 }
 let salarioLiquido = salarioBase-Ir;
 console.log(salarioLiquido);
+*/
