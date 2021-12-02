@@ -48,8 +48,8 @@ for(let i=0;i<array.length;i++){
 let vetor = [];
 let vetor2 = [];
 div=0;
-for(i=15;i>0;i--){
-    for(i2=15;i2>0;i2--){
+for(i=21;i>0;i--){
+    for(i2=21;i2>0;i2--){
         if((i%i2==0)&&((i/i2)>=1)){
             console.log(`${i} por ${i2} é igual a `);
             div = div +1;
@@ -62,6 +62,13 @@ console.log(vetor);
 for(let i=0;i<vetor.length;i++){
     if((vetor[i]%2)!=0){
         vetor2.push(vetor[i]);
+    }
+}
+console.log(vetor2);
+for(let i=0; i<vetor2.length;i++){
+    if(vetor2[i]==vetor2[i+2]){
+        vetor2.shift(vetor2[i]);
+        console.log(vetor2);
     }
 }
 console.log(vetor2);
