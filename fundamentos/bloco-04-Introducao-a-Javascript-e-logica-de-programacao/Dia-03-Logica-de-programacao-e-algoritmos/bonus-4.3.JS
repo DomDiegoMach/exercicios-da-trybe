@@ -27,14 +27,15 @@ for(let i=0; i<n; i++){
 
 // Exercicio - 3
 // Agora inverta o lado do triângulo. Por exemplo:
-let n = 5;
-let asterisco = "";
-for(let i=1; i<=n; i++){
-    for(let esp=n-i; esp>=1; esp--){
-        console.log(" ");
-        for(let ast=1; ast<=i; ast++){
-            console.log("*");
-        }
-    }
-    //console.log(asterisco);
+let n=5;
+array = [];
+for(i=0;i<n;i++){
+    for(i=0;i<n;i++){
+        if(n-i>1){
+            array.push("0");
+        }else{
+            array.push("1");
+        }console.log(array);
+}
+console.log(array);
 }
