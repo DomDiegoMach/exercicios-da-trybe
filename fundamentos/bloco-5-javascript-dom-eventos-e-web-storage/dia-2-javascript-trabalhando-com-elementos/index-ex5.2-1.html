@@ -44,6 +44,38 @@
     let terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
     console.log(terceiroFilho);
     // 8. Agora acesse o terceiroFilho a partir de pai .
+    let terceiroFilho2 = pai.nextElementSibling;
+    console.log(terceiroFilho);
+
+
+    // 1. Crie um irmão para elementoOndeVoceEsta .
+    //let irmao = document.createElement('section');
+    //irmao.id = 'irmao';
+    //pai.appendChild(irmao);
+    //irmao.innerText = 'Irmão do Elemento - EOVE'
+    //console.log(irmao);
+    //const pai = document.getElementById('pai');
+    const irmaoElementoOndeVoceEsta = document.createElement('section');
+    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+    pai.appendChild(irmaoElementoOndeVoceEsta);
+    
+    // 2. Crie um filho para elementoOndeVoceEsta .
+    let filhoDeEOVE = document.createElement('section');
+    filhoDeEOVE.id = 'filhoDeEOVE';
+    elementoOndeVoceEsta.appendChild(filhoDeEOVE);
+    filhoDeEOVE.innerText = 'Filho do Elemento - EOVE'
+    console.log(filhoDeEOVE);
+    
+    // 3. Crie um filho para primeiroFilhoDoFilho .
+    let filhoDePFDoF = document.createElement('section');
+    filhoDePFDoF.id = 'filhoDePFDoF';
+    primeiroFilhoDoFilho.appendChild(filhoDePFDoF);
+    filhoDePFDoF.innerText = 'Filho de Primeiro filho do filho'
+    console.log(filhoDePFDoF);
+
+    // 4. A partir desse filho criado, acesse terceiroFilho .
+    let terceirofilho3 = filhoDePFDoF.parentElement.parentElement.nextElementSibling;
+    //console.log(terceirofilho3);
 
   </script>
 </body>
