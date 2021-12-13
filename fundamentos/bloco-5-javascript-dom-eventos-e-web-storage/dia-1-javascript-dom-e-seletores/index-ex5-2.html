@@ -43,17 +43,56 @@
     </main>
     <script>
         /*
-        Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
-        - document.getElementById()
-        - document.getElementsByClassName()
-        - document.getElementsByTagName()
- Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
- Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
- Crie uma função que mude a cor do quadrado vermelho para branco.
- Crie uma função que corrija o texto da tag <h1>.
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
- Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-        */
+Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+- document.getElementById()
+- document.getElementsByClassName()
+- document.getElementsByTagName()
+OK - Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
+*/
+let parag = document.querySelectorAll('p')[1];
+function paragrafo() {
+parag.innerText = "Trabalhando com T.I. e na PCDF";
+} 
+
+//OK - Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+let novaCor = document.querySelectorAll(".main-content")[0];
+function corDeFundo (){
+novaCor.style.backgroundColor = 'rgb(76,164,109)';
+}
+
+//OK - Crie uma função que mude a cor do quadrado vermelho para branco.
+let novaCorMeio = document.querySelector(".main-content .center-content");
+function corDeFundoMeio (){
+novaCorMeio.style.backgroundColor = 'white';
+}
+
+//OK - Crie uma função que corrija o texto da tag <h1>.
+let novoTitulo = document.querySelectorAll('.title')[0];
+function titulo() {
+novoTitulo.innerText = "Exercício 5.1 - JavaScript";
+}
+
+//OK - Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+  function maiusculas() {
+  let novoP = document.querySelectorAll('p');
+  for (let i = 0; i < novoP.length; i+=1) {
+    novoP[i].innerText = novoP[i].innerText.toUpperCase();
+  }
+}
+
+//OK - Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+  function mostrarParagrafos() {
+      let paragrafos = document.querySelectorAll('p');
+      for (let i=0; i<paragrafos.length; i += 1) {
+        console.log(paragrafos[i].innerText);
+      }
+    }
+    paragrafo();
+    corDeFundo();
+    corDeFundoMeio();
+    titulo();
+    maiusculas();
+    mostrarParagrafos()
     </script>
   </body>
 </html>
