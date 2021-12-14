@@ -49,15 +49,12 @@
 
 
     // 1. Crie um irmão para elementoOndeVoceEsta .
-    //let irmao = document.createElement('section');
-    //irmao.id = 'irmao';
-    //pai.appendChild(irmao);
-    //irmao.innerText = 'Irmão do Elemento - EOVE'
-    //console.log(irmao);
-    //const pai = document.getElementById('pai');
-    const irmaoElementoOndeVoceEsta = document.createElement('section');
-    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
-    pai.appendChild(irmaoElementoOndeVoceEsta);
+    let irmao = document.createElement('section');
+    irmao.id = 'irmao';
+    pai.appendChild(irmao);
+    irmao.innerText = 'Irmão do Elemento - EOVE'
+    console.log(irmao);
+   
     
     // 2. Crie um filho para elementoOndeVoceEsta .
     let filhoDeEOVE = document.createElement('section');
@@ -75,7 +72,7 @@
 
     // 4. A partir desse filho criado, acesse terceiroFilho .
     let terceirofilho3 = filhoDePFDoF.parentElement.parentElement.nextElementSibling;
-    //console.log(terceirofilho3);
+    console.log(terceirofilho3);
 
   </script>
 </body>

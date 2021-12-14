@@ -1,5 +1,3 @@
-<!-- arquivo index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>  
-  <main>
-    <div id="start"></div>
-    nó
-    <p>elemento</p>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
   </main>
-  <script src="script.js"></script>
+  <script>
+    pai.removeChild(primeiroFilho);
+    pai.removeChild(terceiroFilho);
+    pai.removeChild(quartoEUltimoFilho);
+    elementoOndeVoceEsta.removeChild(segundoEUltimoFilhoDoFilho);
+    // Remova todos os elementos filhos de paiDoPai exceto pai,
+    // elementoOndeVoceEsta e primeiroFilhoDoFilho.
+  </script>
 </body>
 </html>
