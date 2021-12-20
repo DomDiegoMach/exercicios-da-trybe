@@ -1,0 +1,31 @@
+body{
+    font-size: 16px;
+}
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.bolas {
+    font-style: italic;
+    line-height: 1.15em;
+    text-align: justify;
+    text-decoration: chartreuse;
+    font-size: 3em;
+}
+        
+.yellow {
+    color: yellow;
+}
+
+.red { 
+    color: red;
+}
+
+.brown {
+    color: brown;
+}
