@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'header header header header header header'
+    'menu   main   main   main   right  right'
+    'menu   main   main   main   right  right'
+    'menu   footer footer footer footer footer';
+  grid-gap: 5px;
+  background-color: RGB(50, 106, 180);
+  padding: 5px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 23.5px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+<!--
+<h1>Grid Layout</h1>
+
+<p>This grid layout contains six columns and three rows:</p>
+-->
+
+<div class="grid-container">
+  <div class="item1">Header</div>
+  <div class="item2">Menu
+      <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, numquam voluptas? Quis fuga modi quam assumenda id commodi delectus, culpa quae unde aut molestias, illum ut recusandae sint similique dolores!
+      </p>
+  </div>
+  <div class="item3">Main
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim maiores id expedita! Quam quae fugit, laborum provident nulla maiores reiciendis odio doloremque aut. Eius, repellat laboriosam voluptatum aut ad ducimus!</p>
+  </div>  
+  <div class="item4">Right
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perferendis pariatur architecto eos laudantium iusto voluptatibus earum ipsum! A dolor commodi, qui expedita ipsa rerum velit possimus assumenda corporis suscipit.</p>
+    </div>
+  <div class="item5">Footer
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi praesentium beatae dolores ipsa iusto cupiditate possimus aliquid nulla animi architecto eum nam laboriosam, optio, nisi tempora, nihil fuga pariatur? Dolore!</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+

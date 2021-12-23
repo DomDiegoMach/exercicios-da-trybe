@@ -9,7 +9,13 @@
         text-align: center;
       }
 
+      body{
+          text-align: center;
+      }
+
       .first {
+        display: block;
+        margin-left:550px;
         background-color: rgb(235, 200, 84);
         font-size: 20px;
         height: 50px;
@@ -18,6 +24,7 @@
       }
 
       .second {
+        display: inline-block;
         background-color: rgb(219, 219, 219);
         font-size: 20px;
         height: 50px;
@@ -26,39 +33,83 @@
       }
 
       .third {
+        display: inline-block;
         background-color: rgb(170, 142, 106);
         font-size: 20px;
         height: 50px;
         text-align: center;
         width: 300px;
       }
+      
+      #header{
+          background-color: aqua;
+      }
+
+      li{
+          display:inline-block;
+      }
+
+      #SCT_01{
+          background-color: burlywood;
+      }
+
+      #UL_01{
+          background-color: chocolate;
+      }
+
+      #SCT_02{
+          background-color:coral;
+      }
+
+      #UL_02{
+          background-color:cornflowerblue;
+      }
+
+      #UL_03{
+          background-color:cyan;
+      }
+
+      #UL_04{
+          background-color:darkorange;
+      }
 
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1>Hackathon Results</h1>
     </header>
-    <section>
-      <ul>
+    <section id="SCT_01">
+      <ul id="UL_01">
         <li class="first">1º - Equipe 1</li>
         <li class="second">2º - Equipe 2</li>
         <li class="third">3º - Equipe 3</li>
       </ul>
     </section>
-    <section>
+
+<!--
+    Para fixar
+    Para realizar o exercício, leia atentamente o enunciado. 
+    Após entender o que foi pedido, desenvolva a solução e então verifique se você conseguiu cumprir com o que foi solicitado.
+    1 - Para realizar este exercício copie o código HTML abaixo. 
+    Em seguida, faça a implementação das propriedades CSS e, se necessário, faça adições à estrutura HTML existente, 
+    para que o resultado final seja similar à imagem referência.
+    Lembre-se que a estrutura da página deve ser mantida para que a semântica do código seja preservada.
+-->
+
+    <section id="SCT_02">
       <h3>Premiação Primeiro Lugar:</h3>
-      <ul>
+      <ul id="UL_02">
         <li>| R$ 1000,00 por integrante da equipe |</li>
         <li>| Bootcamp de 2 meses com possibilidade de contratação |</li>
       </ul>
       <h3>Premiação Segundo Lugar:</h3>
-      <ul>
+      <ul id="UL_03">
         <li>| R$ 600,00 por integrante da equipe |</li>
         <li>| Participação no processo seletivo para o Bootcamp |</li>
       </ul>
       <h3>Premiação Terceiro Lugar:</h3>
-      <ul>
+      <ul id="UL_04">
         <li>| R$ 300,00 por integrante da equipe |</li>
         <li>| Participação no processo seletivo para o Bootcamp |</li>
       </ul>
