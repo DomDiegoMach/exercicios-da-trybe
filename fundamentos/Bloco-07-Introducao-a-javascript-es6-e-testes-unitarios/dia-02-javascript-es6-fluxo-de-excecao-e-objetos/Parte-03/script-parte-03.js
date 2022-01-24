@@ -122,10 +122,47 @@ console.log(getValueByNumber(lesson1, 0));
 // Output: 'Matématica'
 
 
-Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
+Exercício 08 - Crie uma função que verifique se o par (chave / valor) existe na função. 
+Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. 
+Exemplo:
+*/
+const verifyPair = (obj,chave,valor) => {
+    console.log('Exercício 08');
+    console.log(Object.entries(obj));
+    const chaveValor = Object.entries(obj);
+    let isEqual = false;
+    for (let index in chaveValor){
+        if(chaveValor[index][0] === chave && chaveValor[index][1] === valor)
+        isEqual = true
+        }
+        return isEqual;
+};
+console.log(verifyPair(lesson3,'turno','noite'));
+/*
 Copiar
 console.log(verifyPair(lesson3, 'turno', 'noite'));
 // Output: true,
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
 */
+/**
+Bônus - Exercício 01 - Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. 
+Use o objeto criado no exercício 5.
+*/
+const estudantesDeMat = (obj) => {
+console.log('Exercício Bonus 01');
+let total = 0;
+const array = Object.keys(obj);
+for(index in array){
+    if(obj[array[index]].materia === 'matemática'){
+        total += obj[array[index]].numeroEstudantes;
+    }
+}
+return total;
+}
+console.log(estudantesDeMat(allLessons));
+/*
+Bônus - Exercício 02 - Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, 
+as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+ */
+
