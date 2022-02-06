@@ -58,8 +58,8 @@ const musicas = [
   /**
 Array.some e Array.every
 Para fixar
-1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, 
-retorne false , use some ;
+1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e 
+caso contrário, retorne false , use some ;
 
 const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
@@ -72,7 +72,8 @@ console.log(hasName(names,'Bruna'));
 
 /*
 Exercício - Para Fixar
-2 - Escreva uma função que dado um array de pessoas e uma idade mínima retorne true se todas tiverem a idade maior ou igual a 
+2 - Escreva uma função que dado um array de pessoas e uma idade mínima retorne true se todas 
+tiverem a idade maior ou igual a 
 mínima e caso contrário false , use every ;
 
 const people = [
