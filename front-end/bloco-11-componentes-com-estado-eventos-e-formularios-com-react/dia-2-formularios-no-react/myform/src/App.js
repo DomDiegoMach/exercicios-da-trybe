@@ -12,31 +12,28 @@ constructor(){
   super();
   this.state = {
     // estadoFavorito: '',
-    
+    name: '',
     email: '',
+    age: '',
+    anecdote: '',
+    terms: false,
   };
   this.handleChange = this.handleChange.bind(this);  
 } 
 
-/*
-handleChange(event) {
-  this.setState({
-    estadoFavorito: event.target.value,
-  });
-}
-*/
-//O Comitado acima é equivalente ao que está aqui
 handleChange({ target } ) {
+//  const { name, value } = target;
+const { name } = target;
+// const { value } = (target.type === 'checkbox') ? target.checked : target.value;
+// No caso loga acima, o destructuring vai dar merda. Ainda não sei o porquê.
+const value = (target.type === 'checkbox') ? target.checked : target.value;
   this.setState({
-    // estadoFavorito: target.value,
-    email: target.value,
-  })
-  // console.log(this.state.estadoFavorito.length);
-  console.log(this.state.email.length);
+    [name]: value,
+  });
 };
 
 render(){
-  const { email } = this.props;
+  const { name, email, age, anecdote, terms  } = this.state;
 return (
     <div className="App">
       <header>
@@ -51,6 +48,8 @@ return (
                 id="name"
                 name="name"
                 type="text"
+                onChange = { this.handleChange }
+                value = { name }
               />
             </label>
         <br></br>
@@ -70,7 +69,8 @@ return (
               <select
                 id="age"
                 name="age"
-                defaultValue=""
+                onChange={this.handleChange}
+                value={ age }
               >
                 <option value="">Selecione</option>
                 <option value="adult">Maior que 18</option>
@@ -80,8 +80,26 @@ return (
         <br></br>
             <label htmlFor="anecdote">
               Anedota:
-              <textarea id="anecdote" name="anecdote" />
+              <textarea 
+              id="anecdote" 
+              name="anecdote"
+              onChange={ this.handleChange }
+              value={ anecdote} 
+              />
             </label>
+            <br></br>
+            <label htmlFor="terms">
+              <input
+                id="terms"
+                type="checkbox"
+                name="terms"
+                onChange={ this.handleChange }
+                value={ terms }
+              />
+              Concordo com termos e acordos
+            </label>
+            <br></br>
+            <input type="file" />
         </form>
       </main>
     </div>
