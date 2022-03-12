@@ -12,10 +12,29 @@ constructor(){
     age: '',
     anecdote: '',
     terms: false,
+    formularioComErros: true,
   };
   this.handleChange = this.handleChange.bind(this);  
 } 
 
+handleError() {
+  const { name, email, age, anecdote, terms } = this.state;
+
+  const errorCases = [
+    !name.length,
+    !email.match(/^\S+@\S+$/i),
+    !age.length,
+    !anecdote.length,
+    !terms,
+  ];
+  const formularioPreenchido = errorCases.every((error) => error !== true);
+
+  this.setState({
+    formularioComErros: !formularioPreenchido,
+  })
+};
+
+/*
 handleChange({ target } ) {
 //  const { name, value } = target;
 const { name } = target;
@@ -26,9 +45,18 @@ const value = (target.type === 'checkbox') ? target.checked : target.value;
     [name]: value,
   });
 };
+*/
+
+handleChange({ target }) {
+  const { name } = target;
+  const value = (target.type === 'checkbox') ? target.checked : target.value;
+  this.setState({
+    [name]: value,
+  }, () => { this.handleError(); });
+}
 
 render(){
-  const { name, email, age, anecdote, terms  } = this.state;
+  const { name, email, age, anecdote, terms, formularioComErros  } = this.state;
   // const { handleChange } = this;//nada - fora
 return (
     <div className="App">
@@ -36,8 +64,7 @@ return (
         <h1> Formulário - Prática</h1>
         <h2>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h2>
       </header>
-      <main>
-      <form>
+    <form>
      <PersonalFieldset 
      nameValue={ name }
      emailValue={ email} 
@@ -63,7 +90,9 @@ return (
           <br></br>
           <input type="file" />
         </form>
-      </main>
+        { formularioComErros
+            ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
+            : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
     </div>
   );
  }
@@ -71,72 +100,82 @@ return (
 export default App;
 
 /**
-  import React, { Component } from 'react';
+ import React, { Component } from 'react';
+  import DataFieldset from './DataFieldset';
+  import PersonalFieldset from './PersonalFieldset';
 
   class Form extends Component {
     constructor() {
       super();
 
       this.state = {
+        name: '',
         email: '',
+        age: '',
+        anecdote: '',
+        terms: false,
+        formularioComErros: true,
       };
 
       this.handleChange = this.handleChange.bind(this);
     }
 
-    handleChange(event) {
+    handleError() {
+      const { name, email, age, anecdote, terms } = this.state;
+
+      const errorCases = [
+        !name.length,
+        !email.match(/^\S+@\S+$/i),
+        !age.length,
+        !anecdote.length,
+        !terms,
+      ];
+
+      const formularioPreenchido = errorCases.every((error) => error !== true);
+
       this.setState({
-        email: event.target.value,
+        formularioComErros: !formularioPreenchido,
       });
     }
 
+    handleChange({ target }) {
+      const { name } = target;
+      const value = (target.type === 'checkbox') ? target.checked : target.value;
+      this.setState({
+        [name]: value,
+      }, () => { this.handleError(); });
+    }
+
     render() {
-      const { email } = this.state;
+      const { name, email, age, anecdote, terms, formularioComErros } = this.state;
 
       return (
         <div>
           <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
           <form className="form">
+            <PersonalFieldset
+              nameValue={ name }
+              emailValue={ email }
+              ageValue={ age }
+              handleChange={ this.handleChange }
+            />
 
-            <label htmlFor="name">
-              Nome:
-              <input
-                id="name"
-                name="name"
-                type="text"
-              />
-            </label>
+            <DataFieldset anecdoteValue={ anecdote } handleChange={ this.handleChange } />
 
-            <label htmlFor="email">
-              Email:
+            <label htmlFor="terms">
               <input
-                id="email"
-                name="email"
-                type="email"
+                id="terms"
+                type="checkbox"
+                name="terms"
                 onChange={ this.handleChange }
-                value={ email }
+                value={ terms }
               />
+              Concordo com termos e acordos
             </label>
-
-            <label htmlFor="age">
-              Idade:
-              <select
-                id="age"
-                name="age"
-                defaultValue=""
-              >
-                <option value="">Selecione</option>
-                <option value="adult">Maior que 18</option>
-                <option value="underage">Menor que 18</option>
-              </select>
-            </label>
-
-            <label htmlFor="anecdote">
-              Anedota:
-              <textarea id="anecdote" name="anecdote" />
-            </label>
-
           </form>
+          { formularioComErros
+            ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
+            : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
         </div>
       );
     }

@@ -16,6 +16,7 @@ class DataFieldset extends Component {
             onChange={ handleChange }
             value={ anecdoteValue }
           />
+          { !anecdoteValue.length ? ' -campo vazio- ' : ' -ok- '}
         </label>
 
         <input type="file" />

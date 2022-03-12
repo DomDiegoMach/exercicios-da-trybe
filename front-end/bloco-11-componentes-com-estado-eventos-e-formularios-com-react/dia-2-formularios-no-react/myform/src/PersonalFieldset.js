@@ -18,8 +18,9 @@ class PersonalFieldset extends Component {
             onChange={ handleChange }
             value={ nameValue }
           />
+          { !nameValue.length ? ' -nome inválido- ' : ' -ok- '}{/*Validação a esquerda*/}
         </label>
-
+        <br></br>
         <label htmlFor="email">
           Email:
           <input
@@ -29,8 +30,9 @@ class PersonalFieldset extends Component {
             onChange={ handleChange }
             value={ emailValue }
           />
+           { !emailValue.match(/^\S+@\S+$/i) ? ' -email inválido- ' : ' -ok- ' }{/*Validação a esquerda*/}
         </label>
-
+        <br></br>
         <label htmlFor="age">
           Idade:
           <select
@@ -43,7 +45,9 @@ class PersonalFieldset extends Component {
             <option value="adult">Maior que 18</option>
             <option value="underage">Menor que 18</option>
           </select>
+           { !ageValue.length ? ' -idade inválida- ' : ' -ok- '}
         </label>
+        <br></br>
       </fieldset>
     );
   }
