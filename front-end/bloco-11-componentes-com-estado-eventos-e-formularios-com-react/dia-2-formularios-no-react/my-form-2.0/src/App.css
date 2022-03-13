@@ -10,3 +10,10 @@
   text-align: center;
   flex-direction: column;
 }
+
+.fieldset {
+  display: flex;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+}

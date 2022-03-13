@@ -6,7 +6,7 @@ class DataFieldset extends Component {
     const { anedocteValue, handleChange } = this.props;
 
     return (
-      <fieldset>
+      <fieldset className="fieldset">
         <legend>Texto e arquivos</legend>
         <label htmlFor="anedocte">
           Anedota:

@@ -5,7 +5,7 @@ class PersonalFieldset extends Component {
 render() {
   const { nameValue, emailValue, handleChange, ageValue } = this.props;
    return (
-    <fieldset>
+    <fieldset className="fieldset">
       <legend>Dados Pessoais:</legend>
         <form>
             <label htmlFor="name">
